@@ -10,8 +10,8 @@
     <form id="mortgageForm">
         <table>
             <tr>
-                <td><label for="principal">Loan Amount ($):</label></td>
-                <td><input type="number" id="principal" required></td>
+                <td><label for="principle">Loan Amount ($):</label></td>
+                <td><input type="number" id="principle" required></td>
             </tr>
             <tr>
                 <td><label for="rate">Interest Rate (%):</label></td>
@@ -29,8 +29,8 @@
     <script>
 
         function calculateMortgage() {
-            // Get the initial amount from the principal box
-            const principal = document.getElementById("principle").value;
+            // Get the initial amount from the principle box
+            const principle = document.getElementById("principle").value;
 
             // update rate from the box
             const rate = document.getElementById("rate").value / 100;
@@ -39,14 +39,14 @@
             const years = document.getElementById("years").value;
 
             // Call the power funtion, pow, from Math
-            const monthlyRate = Math.pw(1 + rate, years * 12);
+            const monthlyRate = Math.pow(1 + rate, years * 12);
 
             if (rate === 0) {
                 document.getElementById("result").innerText = "Interest rate cannot be zero.";
                 return;
             }
 
-            const monthlyPayment = (principal * rate * monthlyRate) / (monthlyRate - 1);
+            const monthlyPayment = (principle * rate * monthlyRate) / (monthlyRate - 1);
             document.getElementById("result").innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
         }
     </script>
