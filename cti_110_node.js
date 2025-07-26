@@ -15,8 +15,8 @@ const connectionString = `postgres://postgres:CTI_110_WakeTech@localhost/Gradebo
 const pool = new Pool({connectionString:connectionString})
 
 // This line says when it's looking for a file linked locally,
-// check in sub-folder "public"
-app.use(express.static(path.join(__dirname, 'public')));
+// check in sub-folder "Public"
+app.use(express.static(path.join(__dirname, 'Public')));
 
 // This creates a new anonymous function that runs whenever 
 // someone calls "get" on the server root "/"
